@@ -571,17 +571,17 @@ module mt48lc8m8a2 (Dq, Addr, Ba, Clk, Cke, Cs_n, Ras_n, Cas_n, We_n, Dqm);
 	   
             if ((Ba == 2'b01) && ($time - RCD_chk1 < tRCD))
 	      begin
-		 //->tb.test_control.error_detected;
+		 ->error_detected;
                  $display("at time %t ERROR: tRCD violation during Read or Write to Bank 1", $time);
 	      end
             if ((Ba == 2'b10) && ($time - RCD_chk2 < tRCD))
 	      begin
-		 //->tb.test_control.error_detected;
+		 ->error_detected;
                  $display("at time %t ERROR: tRCD violation during Read or Write to Bank 2", $time);
 	      end
             if ((Ba == 2'b11) && ($time - RCD_chk3 < tRCD))
 	      begin
-		 //->tb.test_control.error_detected;
+		 ->error_detected;
                  $display("at time %t ERROR: tRCD violation during Read or Write to Bank 3", $time);
 	      end
             // Read Command

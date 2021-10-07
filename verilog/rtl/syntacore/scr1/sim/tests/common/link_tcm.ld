@@ -59,7 +59,8 @@ SECTIONS {
     *(sc_test_section)
     . = ALIGN(CL_SIZE);
      PROVIDE(__TEXT_END__ = .);
-  } >ROM
+  } >RAM AT>ROM
+
 
   .rodata ALIGN(CL_SIZE) : {
     __global_pointer$ = . + 0x800;
@@ -67,7 +68,7 @@ SECTIONS {
     . = ALIGN(CL_SIZE);
     LONG(0x13);
     . = ALIGN(CL_SIZE);
-  } >ROM
+  } >RAM AT>ROM
 
 
   /* data segment */

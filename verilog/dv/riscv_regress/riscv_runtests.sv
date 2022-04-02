@@ -53,10 +53,9 @@ end
            $display("RISCV-DEBUG => DMEM ADDRESS: %x READ Data : %x Resonse: %x", core2dmem_addr_o_r,`RISC_CORE.dmem2core_rdata_i,`RISC_CORE.dmem2core_resp_i);
  end
 **/
-/**
   logic [31:0] test_count;
- `define RISC_CORE  i_top.i_core_top
- `define RISC_EXU  i_top.i_core_top.i_pipe_top.i_pipe_exu
+ `define RISC_CORE  u_top.u_riscv_top.i_core_top
+ `define RISC_EXU  u_top.u_riscv_top.i_core_top.i_pipe_top.i_pipe_exu
 
  initial begin
 	 test_count = 0;
@@ -69,8 +68,6 @@ end
                test_count <= test_count+1;
 	  end
  end
-**/
-
 always_ff @(posedge clk) begin
     bit test_pass;
     int unsigned                            f_test;
@@ -175,6 +172,8 @@ always_ff @(posedge clk) begin
                         test_pass &= (ref_data == test_data);
 			if(ref_data != test_data)
 			   $display("ERROR: Compare Addr: %x ref_data : %x, test_data: %x",start,ref_data,test_data);
+			else
+			   $display("STATUS: Compare Addr: %x ref_data : %x, test_data: %x",start,ref_data,test_data);
                         start += 4;
                     end
                     $fclose(fd);

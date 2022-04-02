@@ -178,9 +178,9 @@ module user_risc_regress_tb;
 	   initial begin
 	   	$dumpfile("simx.vcd");
 	   	$dumpvars(1, user_risc_regress_tb);
-	   	$dumpvars(0, user_risc_regress_tb.u_top.u_sdram_ctrl);
-	   	$dumpvars(0, user_risc_regress_tb.u_sdram8);
-	   	//$dumpvars(1, user_risc_regress_tb.u_top.u_riscv_top);
+	   	//$dumpvars(0, user_risc_regress_tb.u_top.u_sdram_ctrl);
+	   	//$dumpvars(0, user_risc_regress_tb.u_sdram8);
+	   	$dumpvars(0, user_risc_regress_tb.u_top.u_riscv_top);
 	   end
        `endif
 

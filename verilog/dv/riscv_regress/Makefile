@@ -179,7 +179,7 @@ ifeq (,$(findstring e,$(ARCH_lowercase)))
 endif
 
 # Comment this target if you don't want to run the isr_sample
-#TARGETS += isr_sample
+TARGETS += isr_sample
 
 # Comment this target if you don't want to run the coremark
 #TARGETS += coremark
@@ -188,11 +188,11 @@ endif
 #TARGETS += dhrystone21
 
 # Comment this target if you don't want to run the hello test
-TARGETS += hello
+#TARGETS += hello
 
 
 # Targets
-.PHONY: tests run_iverilog run_modelsim run_modelsim_wlf run_vcs run_ncsim run_verilator run_verilator_wf
+.PHONY: tests run_iverilog run_modelsim run_modelsim_wlf run_vcs run_ncsim run_verilator run_verilator_wf run_iverilog_wf
 
 default: clean_test_list run_iverilog
 

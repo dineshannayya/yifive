@@ -554,6 +554,7 @@ Examples:
     make verify-user_spi
     make verify-user_i2cm
     make verify-user_risc_boot
+    make verify-riscv_regress
 ```
 
 # Tool Sets
